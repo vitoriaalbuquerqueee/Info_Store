@@ -1,0 +1,174 @@
+_type: export
+__export_format: 4
+__export_date: 2026-07-22T23:50:00.000Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: req_get_clientes
+    parentId: fld_clientes
+    modified: 1720000000000
+    created: 1720000000000
+    url: "{{ _.base_url }}/clientes"
+    name: List All Customers
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1720000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_get_cliente_id
+    parentId: fld_clientes
+    modified: 1720000000000
+    created: 1720000000000
+    url: "{{ _.base_url }}/clientes/1"
+    name: Find Customer By ID
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1719900000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_post_cliente
+    parentId: fld_clientes
+    modified: 1720000000000
+    created: 1720000000000
+    url: "{{ _.base_url }}/clientes"
+    name: Create Customer
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "email": "maria@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1719800000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_get_pedidos
+    parentId: fld_pedidos
+    modified: 1720000000000
+    created: 1720000000000
+    url: "{{ _.base_url }}/pedidos"
+    name: List All Orders
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1720000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_post_pedido
+    parentId: fld_pedidos
+    modified: 1720000000000
+    created: 1720000000000
+    url: "{{ _.base_url }}/pedidos"
+    name: Create Order
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "produto": "Teclado Mecânico",
+          "valor": 250.00,
+          "cliente": {
+            "id": 1
+          }
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1719800000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: fld_clientes
+    parentId: wrk_infostore
+    modified: 1720000000000
+    created: 1720000000000
+    name: Clientes
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1720000000000
+    _type: request_group
+
+  - _id: fld_pedidos
+    parentId: wrk_infostore
+    modified: 1720000000000
+    created: 1720000000000
+    name: Pedidos
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1719900000000
+    _type: request_group
+
+  - _id: wrk_infostore
+    parentId: null
+    modified: 1720000000000
+    created: 1720000000000
+    name: InfoStore API
+    description: Coleção de testes para a API InfoStore
+    scope: collection
+    _type: workspace
+
+  - _id: env_main
+    parentId: wrk_infostore
+    modified: 1720000000000
+    created: 1720000000000
+    name: Base Environment
+    data:
+      base_url: http://localhost:8080
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1720000000000
+    _type: environment
